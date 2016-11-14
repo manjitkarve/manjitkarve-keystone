@@ -1,0 +1,115 @@
+#aboutMeContent{
+  display: flex;
+  justify-content: space-between;
+  .column{
+    flex-basis: 47%;
+  }
+
+  ul{
+    margin: 2.5rem 0px 0px;
+    padding: 0px 0px 0px 2.5rem;
+    li{
+      list-style-type: none;
+      text-indent: -2.5rem;
+      line-height: 2.3rem;
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  #profile-photo{
+    z-index: 1;
+    position: relative;
+    img{width: 100%}
+    &:before, &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 7px;
+      background-color: black;
+      width: 45%;
+      height: 2rem;
+      box-shadow: 0px 0px 5px black;
+      z-index: -1;
+    }
+    &:before{
+      left: .6rem;
+      transform: rotate(-3deg);
+    }
+    &:after{
+      right: .6rem;
+      transform: rotate(3deg);
+    }
+  }
+
+  .buttonRow{
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin: 0 3rem;
+  }
+  #portfolioButton, #resumeButton{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-shrink: 1;
+
+    #portfolio-icon, #resume-icon{
+      .bg-target{fill: $primary-main;}
+      width: 4rem;
+    }
+
+    span.slideout{
+      flex-direction: row;
+      align-items: flex-start;
+      display: none;
+      padding: 0;
+      svg {
+        height: 2.1rem;
+        path {fill: $secondary-main;}
+      }
+    }
+    &:hover{ 
+      span.slideout{
+        display: flex;
+      }
+      #portfolio-icon, #resume-icon{
+        .bg-target{fill: $secondary-main;}
+      }
+    }
+    span.text{
+      font-size: 1.2rem;
+      background-color: $secondary-main;
+      color: $primary-main;
+      padding: 0.18rem 0.9rem 0.3rem;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+  }
+  #portfolioButton{
+    flex-direction: row-reverse;
+    span.slideout{
+      flex-direction: row-reverse;
+      margin-right: -0.5rem;
+      svg{
+        transform: rotateY(64.5deg) translateX(-0.5rem);
+      }
+      span.text{
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+      }
+    }
+  }
+  #resumeButton{
+    span.slideout{
+      margin-left: -0.5rem;
+      svg{
+        transform: rotateY(180deg-64.5deg) translateX(-0.5rem);
+      }
+      span.text{
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+      }
+    }
+  }
+}

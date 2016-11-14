@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="19.998436"
+   height="56.000008"
+   viewBox="0 0 19.998438 56.000006"
+   id="svg4507"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="resume-portfolio-button-bg.svg">
+  <defs
+     id="defs4509" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6568543"
+     inkscape:cx="26.753983"
+     inkscape:cy="7.5840364"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     units="px"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata4512">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-330.4279,-497.31165)">
+    <path
+       style="display:inline;opacity:1;fill:#ff0a73;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6.4000001;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 330.4279,553.31166 18.07709,0 c 0.64848,0 1.28892,-0.0301 1.92291,-0.0684 -12.2545,-6.69915 -18.27802,-17.00556 -18.30104,-27.93163 0.0142,-10.91983 6.01158,-21.22597 18.24547,-27.93358 -0.6158,-0.036 -1.23777,-0.0664 -1.86734,-0.0664 l -18.07709,0 z"
+       id="path4961"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cscccscc" />
+  </g>
+</svg>

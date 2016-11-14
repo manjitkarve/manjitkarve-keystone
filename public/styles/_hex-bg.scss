@@ -1,0 +1,28 @@
+#backgrounds{
+  @include fill-space;
+  box-sizing: content-box;
+  position: fixed;
+  top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: -1;
+  background-color: #01425f;
+  &>div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  #bg-radial-gradient{
+    background: radial-gradient(farthest-corner at 50% 20%, rgba(255, 255, 255, 0.19), rgb(0, 0, 0) 70%);
+  }
+  #bg-sticks{
+    /*background-image: url("/assets/images/hexagon-pattern-bg-sticks-optimized.svg");*/
+    background-image: svg-url("<svg xmlns='http://www.w3.org/2000/svg' width='8' height='14' viewBox='0 0 8 14'><path d='M2.67 0v1.556L0 3.11v7.78l2.67 1.554V14h2.67v-1.556L8 10.894V3.106l-2.66-1.55V0H2.67zm1.334 3.89l2.67 1.553v3.114l-2.67 1.554-2.67-1.553V5.443l2.67-1.554z'/></svg>");
+    opacity: 0.5;
+  }
+  #bg-fills{
+    /*background-image: url("/assets/images/hexagon-pattern-bg-fills-optimized.svg");*/
+    background-image: svg-url("<svg xmlns='http://www.w3.org/2000/svg' width='8' height='14' viewBox='0 0 8 14'><path d='M0 0v3.11l2.67-1.553V0H0zm5.34 0v1.556L8 3.107V0H5.34zM4.003 3.89l-2.67 1.554v3.112l2.67 1.555 2.67-1.553V5.444L4.004 3.89zM0 10.89V14h2.67v-1.556L0 10.89zm8 .003l-2.66 1.55V14H8v-3.107z' fill='#fff'/></svg>");
+    opacity: 0.1;
+  }
+  .pattern{
+    background-repeat: repeat;
+  }
+}

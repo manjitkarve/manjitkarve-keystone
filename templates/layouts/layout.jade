@@ -1,0 +1,18 @@
+include ../mixins/flash-messages
+
+doctype html
+html
+  include head
+
+  body(page=''+section)
+    #backgrounds
+      #bg-radial-gradient
+      #bg-sticks.pattern
+      #bg-fills.pattern
+    block pageContainer
+    #overlay
+      div.buttonBar
+        a.close
+          include ../../public/images/cross-optimized.svg
+      #overlayContent(page=''+section)
+        block overlayContent

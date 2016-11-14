@@ -1,0 +1,124 @@
+@import "css3-mixins";
+
+@mixin fill-space {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+ 
+@mixin link-color($color){
+  a, a:link, a:hover, a:visited, a:active{
+    color: $color;
+  }
+}
+
+@mixin full-width(){
+  @include media("<=phone", "handheld", 'retina2x'){
+    width: 100%;
+    max-width: 100%;
+  }
+  @include media(">phone", "<=tablet", "handheld", "retina2x"){
+    width: 100%;
+    max-width: 100%;
+  }
+  @include media(">tablet", "<=laptop", "handheld", "retina2x"){
+    width: 100%;
+    max-width: 100%;
+  }
+  @include media(">=laptop", "<desktop"){
+    width: 100%;
+    max-width: map-get($breakpoints, "laptop");
+  }
+  @include media(">=desktop"){
+    width: 100%;
+    max-width: 1200px;
+  }
+  width: 100%;
+  max-width: map-get($breakpoints, "laptop");
+}
+
+//
+//  Function to create an optimized svg url
+//
+@function svg-url($svg){
+    //
+    //  Chunk up string in order to avoid
+    //  "stack level too deep" error
+    //
+    $encoded:'';
+    $slice: 2000;
+    $index: 0;
+    $loops: ceil(str-length($svg)/$slice);
+    @for $i from 1 through $loops {
+        $chunk: str-slice($svg, $index, $index + $slice - 1);
+        //
+        //   Encode (may need a few extra replacements)
+        //
+        $chunk: str-replace($chunk,'"','\'');
+        $chunk: str-replace($chunk,'<','%3C');
+        $chunk: str-replace($chunk,'>','%3E');
+        $chunk: str-replace($chunk,'&','%26');
+        $chunk: str-replace($chunk,'#','%23');
+        $encoded: #{$encoded}#{$chunk};
+        $index: $index + $slice;
+    }
+    @return url("data:image/svg+xml;charset=utf8,#{$encoded}");
+}
+
+//  Helper function to replace characters in a string
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace +
+            str-replace(str-slice($string, $index +
+            str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
+
+@keyframes animSlideDown{
+  0% {
+    max-height: 0;
+    transform: scaleY(0);
+  }
+  100% {
+    max-height: 20rem;
+    transform: scaleY(1);
+    display: block;
+  }
+}
+@keyframes animSlideUp{
+  0% {
+    max-height: 20rem;
+    transform: scaleY(1);
+  }
+  100% {
+    max-height: 0;
+    transform: scaleY(0);
+    display: none;
+  }
+}
+
+@mixin animDown($t: 0.5s){
+  animation: animSlideDown $t ease 0 normal forwards;
+}
+@mixin animUp($t: 0.1s){
+  animation: animSlideUp $t ease;
+}
+
+
+@mixin slideDown($h:5rem, $t:0.5s){
+  overflow: initial;
+  max-height: $h;
+  transition: max-height $t;
+}
+
+@mixin slideUp($h:0, $t:0.05s){
+  overflow: hidden;
+  max-height: $h;
+  transition: max-height $t;
+}

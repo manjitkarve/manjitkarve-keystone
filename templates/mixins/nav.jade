@@ -1,0 +1,32 @@
+mixin l0Node(home, groups)
+  +nodeRenderer(home, "", "nav-link", 0)
+    each group, index in groups
+      +l1Group(group)
+
+mixin l1Group(group)
+  ul.navigation-menu.group.l1(id=group.id)
+    each node, index in group.nodes
+      +nodeRenderer(node, "", "nav-link", 1)
+        if node.type == "group"
+          +l2MenuContent(node)
+
+mixin l2MenuContent(submenu)
+  - var submenuId=((typeof IDprefix==="undefined")?"":IDprefix) + submenu.id;
+  ul.submenu.l2(id=submenuId)
+    each node, index in submenu.nodes
+      +nodeRenderer(node, "ext-link", "", 2)
+
+mixin nodeRenderer(node, liclasses, aclasses, level)
+  - var nodeId=((typeof IDprefix==="undefined")?"":IDprefix) + node.id;
+  li.nav-link-list-item(id=nodeId class=liclasses class="l"+level class=(node.id===section?"current-page":""))
+    if node.id===section
+      div.current-page: div.nubbin &#9660;
+    a(href=node.href class=aclasses target=(liclasses.indexOf("ext-link")!=-1 ? "_blank" : "_self"))
+      span.text !{node.text}
+      if node.icon
+        - var icon = modules.fs.readFileSync(node.icon)
+        span.icon!= icon
+      else
+        span.icon
+    if block
+      block

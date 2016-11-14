@@ -1,0 +1,160 @@
+{
+  "type": "group",
+  "text": "",
+  "icon": "",
+  "nodes": [
+    {
+      "type": "leaf",
+      "text": "Home",
+      "icon": "public/images/logo-optimized.svg",
+      "href": "/",
+      "id": "home-page",
+      "classes": {}
+    },
+    {
+      "type": "group",
+      "text": "",
+      "icon": "",
+      "id": "group1",
+      "classes": {},
+      "nodes": [
+        {
+          "type": "leaf",
+          "text": "Résumé",
+          "icon": "public/images/resume-optimized.svg",
+          "href": "/resume/",
+          "id": "resume-page",
+          "classes": {}
+        },
+        {
+          "type": "leaf",
+          "text": "Portfolio",
+          "icon": "public/images/portfolio-optimized.svg",
+          "href": "/portfolio/",
+          "id": "portfolio-page",
+          "classes": {}
+        },
+        {
+          "type": "group",
+          "text": "Services",
+          "icon": "public/images/services-optimized.svg",
+          "href": "javascript:void(0)",
+          "id": "services-page",
+          "groupid": "services-menu",
+          "classes": {},
+          "nodes": [
+            {
+              "type": "leaf",
+              "text": "UX Design",
+              "icon": "",
+              "href": "javascript:void(0)",
+              "id": "ux-design-page",
+              "classes": {}
+            },
+            {
+              "type": "leaf",
+              "text": "Website Design",
+              "icon": "",
+              "href": "javascript:void(0)",
+              "id": "website-design-page",
+              "classes": {}
+            },
+            {
+              "type": "leaf",
+              "text": "Team Consulting",
+              "icon": "",
+              "href": "javascript:void(0)",
+              "id": "team-consulting-page",
+              "classes": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "text": "",
+      "icon": "",
+      "id": "group2",
+      "nodes": [
+        {
+          "type": "leaf",
+          "text": "About",
+          "icon": "public/images/about-optimized.svg",
+          "href": "/",
+          "id": "about-page",
+          "classes": {}
+        },
+        {
+          "type": "group",
+          "text": "Contact",
+          "icon": "public/images/contact-optimized.svg",
+          "href": "/contact/",
+          "id": "contact-menu",
+          "groupid": "contact-types-menu",
+          "classes": {},
+          "nodes": [
+            {
+              "type": "leaf",
+              "text": "LinkedIn",
+              "icon": "public/images/linkedin-optimized.svg",
+              "href": "https://www.linkedin.com/in/manjitkarve",
+              "id": "contact-type-linkedin",
+              "classes": {
+                "li": "ext-link"
+              }
+            },
+            {
+              "type": "leaf",
+              "text": "GitHub",
+              "icon": "public/images/github-optimized.svg",
+              "href": "https://github.com/manjitkarve",
+              "id": "contact-type-github",
+              "classes": {
+                "li": "ext-link"
+              }
+            },
+            {
+              "type": "leaf",
+              "text": "@laaltoofan",
+              "icon": "public/images/twitter-optimized.svg",
+              "href": "https://www.twitter.com/laaltoofan",
+              "id": "contact-type-twitter",
+              "classes": {
+                "li": "ext-link"
+              }
+            },
+            {
+              "type": "leaf",
+              "text": "@manjitkarve",
+              "icon": "public/images/instagram-optimized.svg",
+              "href": "https://www.instagram.com/manjitkarve/",
+              "id": "contact-type-instagram",
+              "classes": {
+                "li": "ext-link"
+              }
+            },
+            {
+              "type": "leaf",
+              "text": "contact@manjitkarve.com",
+              "icon": "public/images/email-optimized.svg",
+              "href": "mailto:contact@manjitkarve.com",
+              "id": "contact-type-email",
+              "classes": {
+                "li": "ext-link"
+              }
+            }
+          ]
+        },
+        {
+          "type": "leaf",
+          "text": "Bloggarooda",
+          "icon": "public/images/blog-optimized.svg",
+          "href": "/blogs/",
+          "id": "blog-page",
+          "classes": {}
+        }
+      ]
+    }
+  ]
+}

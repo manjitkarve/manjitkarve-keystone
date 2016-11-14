@@ -1,0 +1,12 @@
+main#body(page=''+section)
+  //- The Intro block appears above flash messages (used for temporary information display)
+  block intro
+
+  //- Flash messages allow you to display once-off status messages to users, e.g. form
+  //- validation errors, success messages, etc.
+  +flash-messages(messages)
+  
+  //- The content block should contain the body of your template's content
+  block content
+  
+  block main

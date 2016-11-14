@@ -1,0 +1,14 @@
+@if ($dev-mode){
+  .lipsum{
+    @for $i from 1 through $lipsum-limit{
+      @for $j from 1 through $lipsum-limit{
+        @if ($i >= $j){
+          &[lipsum-amount = "#{$i}"] p:nth-child(#{$j}){display: block;}
+        }
+        @else {
+          &[lipsum-amount = "#{$i}"] p:nth-child(#{$j}){display: none;}
+        }
+      }
+    }
+  }
+}

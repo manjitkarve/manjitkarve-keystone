@@ -1,0 +1,34 @@
+include ../mixins/nav
+extends ../layouts/page
+
+block content
+  #resumeContent.mainContent
+    h2 Résumé
+    #resumeLayout.columns
+      .col1
+        section#workex
+          | !{resumeSections['workex-companies']}
+        h3.education Education
+        section#education
+          article.degree.collapsed
+            div.icon
+              include ../../public/images/graduation-cap.svg
+            div.degreeName MSc (CS)
+            div.univName University of Pune
+            div.grade First Class
+            div.college Fergusson college
+            div.gradDate July 2001
+          article.degree.collapsed
+            div.icon
+              include ../../public/images/graduation-cap.svg
+            div.degreeName BSc (CS)
+            div.univName University of Pune
+            div.grade First Class with Distinction
+            div.college Fergusson college
+            div.gradDate June 1999
+      .col2
+        h3.highlights Highlights
+        section#highlights
+          | !{resumeSections['workex-highlights']}
+        section#competencies
+          | !{resumeSections['workex-competency']}

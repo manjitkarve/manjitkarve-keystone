@@ -1,0 +1,228 @@
+nav{
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  margin-bottom: 1rem;
+  ul, li{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: inherit;
+  }
+  @include link-color($primary-main);
+  a:hover{color: $secondary-main;}
+  a{
+    font-weight: 300;
+    text-decoration: none;
+    outline: none;
+  }
+  #menu-trigger{display: none;}
+
+  .navigation-menu{
+    .navigation-menu, .submenu{display: none;}
+  }
+  span.text{display: block;}
+  span.icon{display: none;}
+
+  .nav-link-list-item.l0>a{
+    span.text{display: none;}
+    span.icon{
+      display: block;
+      .bg-target{fill: $secondary-main;}
+    }
+  }
+  .navigation-menu .group{
+    display: block;
+  }
+
+  &.standard{
+    background-color: transparentize($primary-orth-dark, 0.1);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 2.6em;
+    padding: 0.2rem 0 0.4rem;
+    a{
+      font-size: 1.5em;
+      line-height: 0.8em;
+      @include media(">=laptop", "<desktop") {
+        font-size: 1.3em;
+      }
+      @include media(">=desktop") {
+        font-size: 1.6em;
+      }
+    }
+    .nav-link-list-item.l0{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &>a{
+        order: 1;
+        display: block;
+        flex-basis: 5%;
+        width: 5%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        span.text{display: none;}
+        span.icon{
+          display: block;
+          .bg-target{fill: $secondary-main;}
+        }
+      }
+    }
+    .group{
+      display: flex;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 45%;
+      &>li{
+        margin: 10px 1.2rem 10px;
+        &.current-page{
+          position: relative;
+          @include link-color($secondary-main);
+        }
+        div.current-page{
+          display: block;
+          position: absolute;
+          z-index: 10000;
+          bottom: -.91rem;
+          width: 100%;
+          height: 0.2rem;
+          background-color: $secondary-main;
+        }
+        div.nubbin{
+          content: '\25BC';
+          transform: scaleX(2.5);
+          font-size: 0.7rem;
+          color: $secondary-main;
+          text-align: center;
+          line-height: 0.5rem;
+        }
+      }
+      &#group1{
+        order: 2;
+        justify-content: flex-end;
+        margin-right: 1rem;
+      }
+      &#group2{
+        order: 0;
+        margin-left: 1rem;
+      }
+    }
+    /*.navigation-menu{
+      .submenu{
+        display: none;
+        font-size: 0.7em;
+        margin: 0;
+        position: absolute;
+        background-color: inherit;
+        padding: 0.5em 1em;
+        //margin-top: 1.3em;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        align-items: baseline;
+        background-color: $secondary-main;
+        @include link-color($primary-orth-dark);
+        right: -1em;
+        .nav-link-list-item{
+          margin: 0.5em 1em;
+        }
+      }
+      &.group1 .submenu{
+        right: -1em;
+      }
+      &.group>.nav-link-list-item{
+        position: relative;
+        &:hover, &.debughover{
+          border-bottom: 5px solid $secondary-main;
+          .submenu{
+            display: flex;
+          }
+        }
+      }
+    }*/
+  }
+  &.minimizing{
+    $nav-size-steps: 51;
+    //position: fixed;
+    @include full-width();
+    position: fixed;
+    background-color: $primary-orth-dark;
+    border-bottom: 1px solid lighten($primary-orth-dark, 5%);
+    border-radius: 0px;
+    @for $i from 1 through ($nav-size-steps){
+      $scrolled:$nav-size-steps - $i;
+      &[scrolling = "#{$scrolled}"]{
+        //height: #{$i}px;
+        font-size: .6em+$i*.008;
+        #home-page>a{
+          $logosize: 3%+$i*.04;
+          flex-basis: $logosize;
+          width: $logosize;
+        }
+      }
+    }
+    .group > li.current-page div.current-page{display: none;}
+  }
+  &.minimized{
+    position: fixed;
+    @include full-width();
+    background-color: $primary-orth-dark;
+    border-bottom: 1px solid lighten($primary-orth-dark, 5%);
+    border-radius: 0px;
+    font-size: 0.6em;
+    #home-page>a{
+      $logosize: 3%;
+      flex-basis: $logosize;
+      width: $logosize;
+    }
+    .group > li.current-page div.current-page{display: none;}
+  }
+  &.flared{
+    position: absolute;
+    div.current-page, div.nubbin{
+      display: none;
+    }
+    .navigation-menu.l0{
+      position: relative;
+    }
+    .navigation-menu{
+      span.text{
+        display: block;
+        position: absolute;
+        left: -10000px;
+        font-size: 1.8em;
+        font-weight: 100;
+        color: $primary-main;
+        &.only{
+          display: block;
+        }
+      }
+      span.icon{
+        display: block;
+        .bg-target{
+          fill: $primary-main;
+        }
+        .menu-icon:hover, #logo:hover{
+          .bg-target{
+            fill: $secondary-main;
+          }
+        }
+      }
+      .nav-link-list-item{
+        position: absolute;
+        display: block;
+      }
+      .nav-link-list-item a{
+        display: block;
+        position: relative;
+        &:hover span.text{
+
+          &:hover{
+            color: $secondary-main;
+          }
+        }
+      }
+    }
+  }
+}

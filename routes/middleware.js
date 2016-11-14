@@ -25,6 +25,14 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Contact', key: 'contact', href: '/contact' },
 	];
 	res.locals.user = req.user;
+
+	res.locals.menu = require('../public/data/menu.json');
+	
+	res.locals.modules = {
+      fs: require('fs'),
+      require: 'require',
+
+    };
 	next();
 };
 
@@ -55,3 +63,4 @@ exports.requireUser = function (req, res, next) {
 		next();
 	}
 };
+

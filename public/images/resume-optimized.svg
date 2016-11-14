@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" id="resume-icon" class="menu-icon">
+  <g transform="translate(0 -952.362)">
+    <path class="bg-target" d="M50 952.362a50 50 0 0 0-50 50 50 50 0 0 0 50 50 50 50 0 0 0 50-50 50 50 0 0 0-50-50zM31.412 974.2H55.61l.007.006v14.17c0 1.006.812 1.818 1.82 1.818h14.168l.007.007v38.506c0 1.007-.812 1.82-1.82 1.82h-38.38c-1.007 0-1.818-.813-1.818-1.82v-52.688c0-1.007.81-1.82 1.82-1.82z"/>
+    <path d="M55.617 974.2v14.175c0 1.008.81 1.82 1.82 1.82H71.61l-15.993-15.996z" fill-opacity=".138"/>
+    <rect rx="1.214" width="18.849" height="2.427" x="34.701" y="980.521" ry="1.214" fill="#fff" fill-opacity=".347"/>
+    <rect rx="1.214" width="32.161" height="2.427" x="34.701" y="994.443" ry="1.214" fill="#fff" fill-opacity=".347"/>
+    <path d="M35.915 987.482c-.672 0-1.214.54-1.214 1.213 0 .672.543 1.214 1.215 1.214h20.548c-.508-.323-.846-.887-.846-1.535v-.893H35.915z" fill="#fff" fill-opacity=".347"/>
+    <rect rx="1.214" width="4.366" height="2.427" x="62.496" y="1008.365" ry="1.214" fill="#fff" fill-opacity=".347"/>
+    <rect rx="1.214" ry="1.214" y="1015.327" x="62.496" height="2.427" width="4.366" fill="#fff" fill-opacity=".347"/>
+    <rect rx="1.214" width="4.366" height="2.427" x="62.496" y="1022.288" ry="1.214" fill="#fff" fill-opacity=".347"/>
+    <rect rx="1.214" width="18.849" height="2.427" x="34.701" y="1001.404" ry="1.214" fill="#fff" fill-opacity=".347"/>
+    <rect rx="1.214" ry="1.214" y="1008.365" x="34.701" height="2.427" width="25.132" fill="#fff" fill-opacity=".347"/>
+    <rect rx="1.214" width="25.132" height="2.427" x="34.701" y="1015.327" ry="1.214" fill="#fff" fill-opacity=".347"/>
+    <rect rx="1.214" ry="1.214" y="1022.288" x="34.701" height="2.427" width="25.132" fill="#fff" fill-opacity=".347"/>
+  </g>
+</svg>

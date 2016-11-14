@@ -1,0 +1,241 @@
+//layout
+#portfolioContent{
+  margin-bottom: 2rem;
+
+  #portfolioLayout{
+    display: flex;
+    margin-top: 1.5rem;
+    $colCount: 3;
+    $gutter: 3.2%;
+    .col{
+      margin-right: $gutter;
+      flex-basis: (100% - ($colCount - 1) * $gutter) / $colCount;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+
+  .artifactSet.inPage{
+    .artifact{
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1rem;
+      img{
+        width: 100%;
+      }
+      &:before, &:after{
+        content: '';
+        position: absolute;
+        bottom: 7px;
+        width: 45%;
+        height: 2rem;
+        z-index: -1;
+      }
+      &:before{
+        left: .6rem;
+        height: 67%;
+        width: 100%;
+      }
+      &:after{
+        right: .6rem;
+      }
+      .description.short{
+        position: absolute;
+        width: 0%;
+        right: 0;
+        top: 0;
+        bottom: 0.5rem;
+        z-index: 2;
+        p{
+          margin: 0.1rem 0.4rem 0;
+        }
+      }
+      .moreLink{
+        color: $secondary-main;
+        text-shadow: none;
+        font-weight: 400;
+      }
+    }
+    &.out .artifact .description.short{
+      width: 80%;
+      left: 100%;
+    }
+  }
+}
+
+//appearance
+#portfolioContent{
+  #{$a-tags}, #{$a-tags-hover}{
+    text-decoration: none;
+  }
+
+  h3{
+    font-size: 1.6rem;
+    font-weight: 100;
+  }
+  .artifactSet.inPage{
+    perspective: 500px;
+    perspective-origin: bottom;
+    .artifact{
+      overflow: hidden;
+      display: none;
+      &.default{
+        display: block;
+        transform: rotate3d(69, 90, -29, 37deg);
+        transition: transform 0.1s;
+      }
+      &:before, &:after{
+        display: block;
+        background-color: black;
+        box-shadow: 0px 0px 5px black;
+        transform: none;
+      }
+      &:after{
+        display: none;
+      }
+      .description.short{
+        color: transparent;
+        background-color: transparentize($color: $primary-orth-dark, $amount: 0.1);
+        overflow: hidden;
+        width: 80%;
+        left: 100%;
+
+        p{
+          text-shadow: $primary-main 0 0 .5px;
+        }
+      }
+    }
+  }
+  .artifactSet{
+
+    .artifact{
+      .description.short{
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .artifact{
+
+    img{
+      box-shadow: $primary-orth-dark 0px 0px 2px;
+    }
+  }
+}
+
+
+//interaction & animation
+@keyframes descSlideIn{
+  0% {
+    left: 100%;
+    color: transparent;
+  }
+  100% {
+    left: 20%;
+    color: $primary-main;
+  }
+}
+@keyframes descSlideOut{
+  0% {
+    left: 20%;
+    color: $primary-main;;
+  }
+  100% {
+    left: 100%;
+    color: transparent;
+    display: none;
+  }
+}
+
+$rotationDuration: 0.3s;
+$slideDuration: 0.2s;
+#portfolioContent{
+  .artifactSet.inPage{
+    &:hover{
+      perspective: none;
+      .artifact{
+        transform: none;
+        transition: transform $rotationDuration;
+        &:before{
+          width: 45%;
+          height: 2rem;
+          transform: rotate(-3deg);
+        }
+        &:after{
+          transform: rotate(3deg);
+        }
+        &:after{display: block;}
+        .description.short{
+          color: $primary-main;
+          animation: descSlideIn $slideDuration ease 0s normal forwards;
+        }
+      }
+    }
+    &.out .artifact .description.short{
+      animation: descSlideOut $slideDuration ease;
+    }
+
+  }
+}
+
+//floated
+#overlayContent[page="portfolio-page"]{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: stretch;
+  #imageContainer{
+    order: 2;
+    flex-basis: 40rem;
+    align-self: stretch;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .artifactSet.floated{
+    flex-grow: 0;
+    flex-basis: 40rem;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    .artifact{
+      position: absolute;
+      width: 40rem;
+      transition: left 0.5s;
+      .description.short{display: none;}
+      img{width: 100%;}
+    }
+    
+    @for $i from 1 through 10{
+      @for $j from 1 through 10{
+        &[currentlyActive="#{$i}"]{
+          .artifact:nth-child(#{$j}){
+            @if $j < $i {
+              left: -40rem;              
+            }
+            @if $j == $i {
+              left: 0;
+            }
+            @if $j > $i {
+              left: 40rem;
+            }
+          }
+        }  
+      }
+      &[currentlyActive="#{$i}"]{
+        .artifact:nth-child(#{$i}){
+        }
+      }
+    }
+  }
+  a.nav{
+    display: block;
+    flex-basis: 5rem;
+    &#prev{order: 1;}
+    &#next{order: 3;}
+    path{fill: $primary-main;}
+  }
+
+}

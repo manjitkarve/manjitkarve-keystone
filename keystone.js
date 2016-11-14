@@ -11,9 +11,12 @@ var keystone = require('keystone');
 
 keystone.init({
 	'name': 'manjitkarve-keystone',
-	'brand': 'manjitkarve-keystone',
+	'brand': 'Manjit Karve',
 
 	'sass': 'public',
+	'sass options': {
+		'sourceMap': 'public/styles/style.css.map',
+	},
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
@@ -38,6 +41,8 @@ keystone.set('locals', {
 	env: keystone.get('env'),
 	utils: keystone.utils,
 	editable: keystone.content.editable,
+	_k: keystone,
+	fileCache:{},
 });
 
 // Load your project's Routes

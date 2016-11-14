@@ -1,0 +1,43 @@
+#contactContent{
+  ul{
+    margin: 1.5rem 0px 0px;
+    padding: 0px 0px 0px 2.5rem;
+    li{
+      list-style-type: none;
+      line-height: 2.3rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+      span.icon{
+        position: absolute;
+        left: -2.75rem;
+        top: 0.3rem;
+        svg{
+          width: 2rem;
+          .bg-target{
+            fill: $primary-main;
+          }
+        }
+      }
+      @include link-color($primary-main);
+      #{$a-tags}{
+        color: $primary-main;
+        text-decoration: none;
+      }
+
+      #{$a-tags-hover}{
+        span.icon{
+          left: -2.7rem;
+          top: 0.35rem;
+          svg{
+            width: 2.05rem;
+            .bg-target{
+              fill: $secondary-main;
+            }
+          }
+        }
+        color: $secondary-main;
+        text-decoration: none;
+      }
+    }
+  }
+}

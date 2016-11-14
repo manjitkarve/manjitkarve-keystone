@@ -1,0 +1,51 @@
+@import "home-page-icons";
+$icons: pencil wrench beaker magic heart eq logo;
+html, body, #page-container{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#page-container, main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAF7FF;
+}
+main{
+  font-size: 50px;
+  font-family: "Roboto";
+  div{
+    line-height: 45px;
+    text-align: center;
+  }
+  #icons-container{
+    position: relative;
+    width: 45px;
+    height: 45px;
+    .icon{
+      -webkit-transition: opacity .5s ease-in-out;
+      -moz-transition: opacity .5s ease-in-out;
+      -o-transition: opacity .5s ease-in-out;
+      transition: opacity .5s ease-in-out;
+      position: absolute;
+      top: 0; left: 0; right: 100%; bottom: 100%;
+    }
+  }
+}
+.icon i{
+  color: #3C70D6;
+  text-decoration: none;
+  font-size: 40px;
+  &.icon-manjit-logo{
+    color: #EC0944;
+  }
+}
+@each $icon in $icons{
+  .icon.#{$icon} {opacity: 0;}
+  #icons-container[current-icon='#{$icon}'] .icon.#{$icon} {opacity: 1;}
+}
+#message{
+  color: rgba(51, 48, 41, 1);
+}

@@ -1,0 +1,230 @@
+main#body[page='resume-page']{min-height: 36rem;}
+#resumeContent{
+  margin-bottom: 2rem;
+  #{$a-tags}, #{$a-tags-hover}{
+    text-decoration: none;
+  }
+
+  #resumeLayout{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 1.5rem;
+  }
+  .col1{
+    flex-grow: 1;
+    font-size: 0.9rem;
+  }
+  .col2{
+    flex-basis: 12rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    color: $primary-light;
+    section{
+      margin-top: -0.3rem;
+      p{text-align: right;}
+      ul{
+        margin: 0;
+        list-style-type: none;
+        padding: 0;
+        li{
+          list-style-type: none;
+          margin-bottom: 0.3rem;
+        }
+      }
+    }
+  }
+  h3{
+    &.highlights{margin-top: -0.4rem;display: none;}
+    margin-bottom: 0.8rem;
+    font-weight: 100;
+    font-size: 1.35rem;
+    color: #03a9f4;
+  }
+  .company{
+    @include link-color($primary-main);
+    overflow: hidden;
+    .summary{
+      display: flex;
+      align-items: center;
+      background-color: $primary-orth-alt;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+      svg {
+        width: 2rem;
+        margin-top: 0.3rem;
+      }
+      
+      
+      .companyAndDesig{
+        flex-grow: 1;
+        margin-left: 1rem;
+      }
+    }
+    &.collapsed {
+      .summary{
+        padding: 0.6rem 1rem;
+        svg {
+          flex-basis: 1.5rem;
+          margin: 0.25rem;
+          path{fill: $primary-main;}
+        }
+        .short{display: inline;}
+        .full{display: none;}
+        .designation{display: none;}
+        .companyName{font-size: 1.2rem;}
+      }
+    }
+    .details{
+      overflow: hidden;
+      //@include animUp();
+      @include slideUp();
+      #{$a-tags}{
+        color: $secondary-main;
+        text-decoration: none;
+      }
+      #{$a-tags-hover}{color: $secondary-light;}
+    }
+    &.expanded{
+      font-size: 1rem;
+      .summary{
+        padding: 0.24rem 1rem;
+        svg{
+          margin: 0rem;
+          flex-basis: 2rem;
+          path{fill: $secondary-main;}
+        }
+        .short{display: none;}
+        .full{display: inline;} 
+        .designation{display: block;}
+      }
+      .details{
+        //@include animDown();
+        @include slideDown(20rem);
+      }
+    }
+    
+  }
+  #competencies{
+    margin-top: 1rem;
+  }
+  #skills{
+    $right-margin: 1.2rem;
+    $skills: ("html5", "css3", "sass", "javascript", "jquery", "xml", "svg", "nodejs");
+    li{
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: 1rem;
+      background-position: 0 0.25rem;
+      padding-left: 1.4rem;
+
+      &:after, &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        right: $right-margin;
+        top: 0.3rem;
+        z-index: 1;
+        width: 5.2rem;
+        height: 0.7rem;
+        background-color: $primary-orth-dark;
+        border: 1px solid $primary-dark; 
+      }
+      &:before{
+        background-color: $primary-dark;//$grey-lightest;//$secondary-dark;
+        height: 0.5rem;
+        z-index: 2;
+        top: 0.4rem;
+        width: 5rem;
+        right: $right-margin+0.1rem;
+      }
+      @for $i from 0 through 10 {
+        $skillLevel: ''+(0.5*$i);
+        &[#{data-skill-level=$skillLevel}]:before{
+          width: 0.5rem*$i;
+          right: $right-margin+0.1rem+0.5rem*(10-$i);
+        }
+      }
+      @each $skill in $skills{
+        $fileName: $skill+".svg";
+        $fullPath: "../images/"+$fileName;
+        &[#{logo=$fileName}]{
+          background-image: url($fullPath);
+        }
+      }
+    }
+  }
+  #education{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    article.degree{
+      flex-grow: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $primary-orth-alt;
+      margin-right: 0.5rem;
+      padding: 0.5rem;
+      font-size: 0.8rem;
+      flex-basis: 8rem;
+      cursor: pointer;
+      div{
+        line-height: 1em;
+        text-align: center;
+        background-color: $primary-orth-alt;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+      .icon{
+        svg{
+          width: 2.5rem;
+          height: 2rem;
+          path{
+            fill: $primary-main;
+          }
+        }
+      }
+      .degreeName{
+        font-size: 1.4em;
+        text-shadow: $primary-main 0 0 1px;
+      }
+      .univName{
+        font-size: 1em;
+        color: $primary-light;
+        margin-top: 0.1em;
+      }
+      .college{
+        font-size: 0.6em;
+        margin-top: 1em;
+        @include slideUp()
+      }
+      .gradDate{
+        font-size: 0.6em;
+        max-height: 0;
+        @include slideUp()
+      }
+      .grade{
+        font-size: 1.2em;
+        margin-top: 1em;
+        max-height: 0;
+        @include slideUp()
+      }
+      &.expanded{
+        .college, .gradDate{
+          @include slideDown(1rem);
+        }
+        .grade{
+          @include slideDown(2rem);
+        }
+      }
+      &.collapsed{
+        .college, .gradDate, .grade{
+          margin: 0;
+        }
+      }
+    }
+  }
+}

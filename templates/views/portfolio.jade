@@ -1,0 +1,60 @@
+include ../mixins/nav
+extends ../layouts/page
+
+block content
+  #portfolioContent.mainContent
+    h2 Portfolio
+    #portfolioLayout.columns
+      .col
+        section.artifactType
+          h3 UI/UX Design/Dev
+          .artifacts
+            div.artifactSet.inPage
+              article.artifact.default
+                img(src="/images/portfolio-items/cronos/cronos-roadmaps-1.png")
+                div.description.short
+                  p An IT status reporting, and roadmap building/tracking application.
+                  p
+                    strong Role: &nbsp;
+                    | Designer and Developer
+                  p: a.moreLink(href='javascript:void(0)') More...
+
+              article.artifact
+                img(src="/images/portfolio-items/cronos/cronos1.png")
+              article.artifact
+                img(src="/images/portfolio-items/cronos/cronos2.png")
+              article.artifact
+                img(src="/images/portfolio-items/cronos/cronos3.png")
+            div.artifactSet.inPage
+              article.artifact.default
+                img(src="/images/portfolio-items/ImmigrationSystem.png")
+            div.artifactSet.inPage
+              article.artifact.default
+                img(src="/images/portfolio-items/sec-analysis/Mockup06.png")
+            div.artifactSet.inPage
+              article.artifact.default
+                img(src="/images/portfolio-items/PostTradeWFTracker.png")
+      .col
+        section.artifactType
+          h3 Website Dev
+          .artifacts
+            div.artifactSet.inPage
+              article.artifact.default
+                img(src="/images/portfolio-items/shaw-website.png")
+            div.artifactSet.inPage
+              article.artifact.default
+                img(src="/images/portfolio-items/shawdiscfellowship.png")
+      .col
+        section.artifactType
+          h3 Responsive/Mobile Dev
+          .artifacts
+        section.artifactType
+          h3 Mobile App Dev
+          .artifacts
+
+block overlayContent
+  a#prev.nav(delta="-1")
+    include ../../public/images/chevron-circle-left.svg
+  a#next.nav(delta="1")
+    include ../../public/images/chevron-circle-right.svg
+  #imageContainer
