@@ -40,6 +40,7 @@
       &:after{
         right: .6rem;
       }
+      .description.full{display: none;}
       .description.short{
         position: absolute;
         width: 0%;
@@ -71,7 +72,7 @@
   }
 
   h3{
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 100;
   }
   .artifactSet.inPage{
@@ -205,6 +206,19 @@ $slideDuration: 0.2s;
       width: 40rem;
       transition: left 0.5s;
       .description.short{display: none;}
+      .description.full{
+        display: block;
+        color: #385968;
+        font-size: 1.1rem;
+        font-weight: 400;
+        padding: 0.3rem 0.5rem 0.5rem;
+        background-color: #ccefff;
+        border: 0.4rem solid #03a9f4;
+        p{
+          margin: 0 0 0.5rem;
+          &:last-child{margin-bottom: 0;}
+        }
+      }
       img{width: 100%;}
     }
     
@@ -224,18 +238,26 @@ $slideDuration: 0.2s;
           }
         }  
       }
-      &[currentlyActive="#{$i}"]{
-        .artifact:nth-child(#{$i}){
-        }
-      }
     }
   }
   a.nav{
     display: block;
     flex-basis: 5rem;
+    cursor: pointer;
     &#prev{order: 1;}
     &#next{order: 3;}
     path{fill: $primary-main;}
+  }
+  &[artifactcount="1"] a.nav{
+    visibility: hidden;
+  }
+  @for $i from 1 through 10{
+    &[artifactcount="#{$i}"][currentlyActive="#{$i}"]{
+      a.nav#next{visibility: hidden;}
+    }
+    &[currentlyActive="1"]{
+      a.nav#prev{visibility: hidden;}
+    }
   }
 
 }

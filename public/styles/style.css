@@ -1904,7 +1904,8 @@ main#body {
     display: block;
     position: absolute;
     right: 1rem;
-    top: 1rem; }
+    top: 1rem;
+    cursor: pointer; }
     #overlay a.close svg {
       width: 100%;
       height: 100%; }
@@ -2304,6 +2305,8 @@ main#body[page='resume-page'] {
       width: 100%; }
     #portfolioContent .artifactSet.inPage .artifact:after {
       right: .6rem; }
+    #portfolioContent .artifactSet.inPage .artifact .description.full {
+      display: none; }
     #portfolioContent .artifactSet.inPage .artifact .description.short {
       position: absolute;
       width: 0%;
@@ -2325,7 +2328,7 @@ main#body[page='resume-page'] {
   text-decoration: none; }
 
 #portfolioContent h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 100; }
 
 #portfolioContent .artifactSet.inPage {
@@ -2423,6 +2426,18 @@ main#body[page='resume-page'] {
       transition: left 0.5s; }
       #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact .description.short {
         display: none; }
+      #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact .description.full {
+        display: block;
+        color: #385968;
+        font-size: 1.1rem;
+        font-weight: 400;
+        padding: 0.3rem 0.5rem 0.5rem;
+        background-color: #ccefff;
+        border: 0.4rem solid #03a9f4; }
+        #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact .description.full p {
+          margin: 0 0 0.5rem; }
+          #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact .description.full p:last-child {
+            margin-bottom: 0; }
       #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact img {
         width: 100%; }
     #overlayContent[page="portfolio-page"] .artifactSet.floated[currentlyActive="1"] .artifact:nth-child(1) {
@@ -2627,13 +2642,56 @@ main#body[page='resume-page'] {
       left: 0; }
   #overlayContent[page="portfolio-page"] a.nav {
     display: block;
-    flex-basis: 5rem; }
+    flex-basis: 5rem;
+    cursor: pointer; }
     #overlayContent[page="portfolio-page"] a.nav#prev {
       order: 1; }
     #overlayContent[page="portfolio-page"] a.nav#next {
       order: 3; }
     #overlayContent[page="portfolio-page"] a.nav path {
       fill: #03A9F4; }
+  #overlayContent[page="portfolio-page"][artifactcount="1"] a.nav {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][artifactcount="1"][currentlyActive="1"] a.nav#next {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][currentlyActive="1"] a.nav#prev {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][artifactcount="2"][currentlyActive="2"] a.nav#next {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][currentlyActive="1"] a.nav#prev {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][artifactcount="3"][currentlyActive="3"] a.nav#next {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][currentlyActive="1"] a.nav#prev {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][artifactcount="4"][currentlyActive="4"] a.nav#next {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][currentlyActive="1"] a.nav#prev {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][artifactcount="5"][currentlyActive="5"] a.nav#next {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][currentlyActive="1"] a.nav#prev {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][artifactcount="6"][currentlyActive="6"] a.nav#next {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][currentlyActive="1"] a.nav#prev {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][artifactcount="7"][currentlyActive="7"] a.nav#next {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][currentlyActive="1"] a.nav#prev {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][artifactcount="8"][currentlyActive="8"] a.nav#next {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][currentlyActive="1"] a.nav#prev {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][artifactcount="9"][currentlyActive="9"] a.nav#next {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][currentlyActive="1"] a.nav#prev {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][artifactcount="10"][currentlyActive="10"] a.nav#next {
+    visibility: hidden; }
+  #overlayContent[page="portfolio-page"][currentlyActive="1"] a.nav#prev {
+    visibility: hidden; }
 
 footer {
   display: none; }

@@ -78,19 +78,8 @@ $(document).ready(function(){
   $("#overlay a.close").on("click", closeOverlay);
 
   $("#overlayContent[page='portfolio-page'] a.nav").on('click', function(evt){
-    var $artifactSet=$("#imageContainer").find(".artifactSet");
     var delta = parseInt($(this).attr("delta"));
-    var currentlyActive = parseInt($artifactSet.attr("currentlyActive"));
-    currentlyActive+=delta;
-    currentlyActive=currentlyActive<1?$artifactSet.find(".artifact").length:currentlyActive;
-    currentlyActive=currentlyActive>$artifactSet.find(".artifact").length?1:currentlyActive;
-    var artifactSelector="#overlayContent[page='portfolio-page'] .artifactSet article:nth-child("+currentlyActive+")";
-    var height=$(artifactSelector+" img").height();
-    jss.set(artifactSelector, {
-      height: height+"px",
-      top: (($artifactSet.height()-height)/2)+"px"
-    });
-    $artifactSet.attr("currentlyActive", ""+currentlyActive);
+    navigateArtifactSet(delta, evt);
   });
 });
 
@@ -339,23 +328,53 @@ function showPortfolioPopup(evt, artifactSet){
   $(artifactSet).removeClass("inPage").addClass("floated");
   $(artifactSet).after("<div id='placeholder'/>");
   $(artifactSet).appendTo("#imageContainer");
-  // $("#page-container").addClass("popupActive");
   $("#body, footer").addClass("popupActive");
   $(artifactSet).attr("currentlyActive", "1");
+  $('#overlayContent').attr("currentlyActive", "1");
+  $(".artifactSet.out, .artifactSet.over").removeClass("out over");
   jss.remove();
   openOverlay();
+  $("body").on("keydown", keyboardHandlerForPortfolioNav);
   var artifactSelector="#overlayContent[page='portfolio-page'] .artifactSet article:nth-child(1)";
-  var height=$(artifactSelector+" img").height();
+  var height=$(artifactSelector+" img").height()+$(artifactSelector+" .description.full").height();
   jss.set(artifactSelector, {
     height: height+"px",
     top: (($(artifactSet).height()-height)/2)+"px"
   });
+  $("#overlayContent[page='portfolio-page']").attr("artifactCount", ""+$(artifactSet).find(".artifactSet .artifact").length);
   overlayCloseActions.addPostAction(function(){
     $(artifactSet).appendTo("#placeholder");
     $(artifactSet).unwrap();
     $(artifactSet).addClass("inPage").removeClass("floated");
+    $("body").off("keydown", keyboardHandlerForPortfolioNav);
     jss.remove();
-    // $("#page-container").removeClass("popupActive");
+    $("#overlayContent[page='portfolio-page']").removeAttr("artifactCount");
     $("#body, footer").removeClass("popupActive");
   });
+}
+
+function navigateArtifactSet(delta, evt){
+    var $artifactSet=$("#imageContainer").find(".artifactSet");
+    var currentlyActive = parseInt($artifactSet.attr("currentlyActive"));
+    currentlyActive+=delta;
+    currentlyActive=currentlyActive<1?$artifactSet.find(".artifact").length:currentlyActive;
+    currentlyActive=currentlyActive>$artifactSet.find(".artifact").length?1:currentlyActive;
+    var artifactSelector="#overlayContent .artifactSet article:nth-child("+currentlyActive+")";
+    var height=$(artifactSelector+" img").height()+$(artifactSelector+" .description.full").height();
+    jss.set(artifactSelector, {
+      height: height+"px",
+      top: (($artifactSet.height()-height)/2)+"px"
+    });
+    $artifactSet.attr("currentlyActive", ""+currentlyActive);
+    $('#overlayContent').attr("currentlyActive", ""+currentlyActive);
+}
+
+function keyboardHandlerForPortfolioNav(evt){
+  if (evt.key==="ArrowRight"){
+    navigateArtifactSet(1, evt);
+  } else if (evt.key === "ArrowLeft"){
+    navigateArtifactSet(-1, evt);
+  } else if (evt.key === "Escape"){
+    closeOverlay();
+  }
 }
