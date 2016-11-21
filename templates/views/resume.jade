@@ -1,4 +1,3 @@
-include ../mixins/nav
 extends ../layouts/page
 
 block content
@@ -7,7 +6,82 @@ block content
     #resumeLayout.columns
       .col1
         section#workex
-          | !{resumeSections['workex-companies']}
+          article#deshaw-workex.company.expanded
+            a.summary(href='javascript:void(0)')
+              include ../../public/images/briefcase.svg
+              .companyAndDesig
+                .companyName D. E. Shaw India
+                .designation Manager, Design and User Experience
+              .employmentPeriod
+                span.short Apr '07 to Mar '16
+                span.full April 2007 to March 2016
+            .details
+              p Lead designer and team manager of the design and user experience team. 
+              ul
+                li Client interaction: project initiation, requirement gathering, competitive analysis, presentation
+                li Interaction and visual design with high fidelity HTML mockups as deliverables
+                li Uniquely positioned to meet developers’ needs with a background in coding
+                li Firm-wide HTML5, CSS3, and JS consultant
+                li Designed multiple products end-to-end:
+                  ul
+                    li Employee performance appraisal system
+                    li Recruitment and employee referral portal
+                    li Immigration and travel tracker
+                    li Roadmap tracker (with complete UI dev)
+                    li Trend analysis tool
+                    li Post trade workflow dashboard
+                    li Retail investment app (with complete UI dev)
+                li Designed new features and performed heuristic evaluation of existing products
+                li Maintained the firm's corporate websites
+                li Resource allocation, expectation management, project planning, status reporting, and performance appraisals
+              p
+                | Have a look at my 
+                a(href='../../portfolio/') portfolio
+                | .
+          article#microsoft-workex.company.collapsed
+            a.summary(href='javascript:void(0)')
+              include ../../public/images/briefcase.svg
+              .companyAndDesig
+                .companyName Microsoft India Development Centre
+                .designation SDE, Unified Communication
+              .employmentPeriod
+                span.short Oct '06 to Mar '07
+                span.full October 2006 to March 2007
+            .details
+              p
+                | Ported features from v1.0 to v2.0 of Microsoft Mobile Communicator, a WinCE 5.0 IM/VOIP client running in tandem with Microsoft Office technologies, required by changes in the underlying IM/VOIP framework. It was a short stint because of lack of UI work.
+          article#amberpoint-workex.company.collapsed
+            a.summary(href='javascript:void(0)')
+              include ../../public/images/briefcase.svg
+              .companyAndDesig
+                .companyName AmberPoint Technologies
+                .designation Software Developer
+              .employmentPeriod
+                span.short Oct '05 to Oct '06
+                span.full October 2005 to October 2006
+            .details
+              p
+                | Full product suite i18n from scratch, including the ability to manage web-services with end-points, APIs, and parameters with multibyte character names.
+              p
+                | Also responsible for a product called the Environment Monitor, which was AmberPoint’s JFC/Swing UI.
+          article#veritas-workex.company.collapsed
+            a.summary(href='javascript:void(0)')
+              include ../../public/images/briefcase.svg
+              .companyAndDesig
+                .companyName Veritas Software India (Pvt.) Ltd.
+                .designation Software Engineer
+              .employmentPeriod
+                span.short Jan '01 to Sep '05
+                span.full January 2001 to September 2005
+            .details
+              p
+                | Placed at Veritas from campus after post-graduation. Worked on a UI integration platform in JFC/Swing called the Veritas Enterprise Administrator, the front end for an object bus used to remotely manage storage solutions:
+              ul
+                li Design and development of the framework, product features, and components
+                li Profiling and performance testing; optimization
+                li
+                  | Finding and fixing memory leaks, writing new client-server event mechanisms, implementing a single sign-on UI
+
         h3.education Education
         section#education
           article.degree.collapsed
@@ -16,7 +90,7 @@ block content
             div.degreeName MSc (CS)
             div.univName University of Pune
             div.grade First Class
-            div.college Fergusson college
+            div.college Fergusson College
             div.gradDate July 2001
           article.degree.collapsed
             div.icon
@@ -24,11 +98,53 @@ block content
             div.degreeName BSc (CS)
             div.univName University of Pune
             div.grade First Class with Distinction
-            div.college Fergusson college
+            div.college Fergusson College
             div.gradDate June 1999
       .col2
         h3.highlights Highlights
         section#highlights
-          | !{resumeSections['workex-highlights']}
+          ul
+            li
+              strong 15+
+              |  years of total IT experience
+            li
+              strong Nine
+              |  years of design exp.
+            li
+              strong 6+
+              |  years in ace dev
+            li
+              | Designed for 
+              strong 40+
+              |  software products
+            li
+              strong Productivity
+              | ,
+              strong  human capital
+              | ,
+              strong  finance
+              | ,
+              strong  process &amp; workflow management
+              |  domains
+            li
+              strong Web
+              | , 
+              strong desktop
+              | , 
+              strong mobile
+              |  and even a bit of print
         section#competencies
-          | !{resumeSections['workex-competency']}
+          ul#skills
+            li(data-skill-level='5', data-out-of='5', logo='html5.svg') HTML5
+            li(data-skill-level='4.5', data-out-of='5', logo='css3.svg') CSS3
+            li(data-skill-level='4', data-out-of='5', logo='sass.svg') Sass
+            li(data-skill-level='4.5', data-out-of='5', logo='javascript.svg') Javascript
+            li(data-skill-level='5', data-out-of='5', logo='jquery.svg') jQuery
+            li(data-skill-level='3', data-out-of='5', logo='svg.svg') SVG
+            li(data-skill-level='3', data-out-of='5', logo='nodejs.svg') Node.js
+            li(data-skill-level='3.5', data-out-of='5', logo='sencha-touch.svg') Sencha Touch
+            li(data-skill-level='3', data-out-of='5', logo='sharepoint.svg') SharePoint
+            li(data-skill-level='4', data-out-of='5') XML
+    #resumeDownload
+      a#resumeButton(href="/other/resume.pdf", target="_blank")
+        include ../../public/images/resume-pdf-optimized.svg

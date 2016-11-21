@@ -1,4 +1,27 @@
 extends ../layouts/page
 
 block content
-	| !{blurb}
+	#aboutMeContent.mainContent
+		.column
+			h2 Manjit Karve
+			ul
+				li Designer — website, webapp, mobile
+				li UI/UX professional
+				li Web developer
+				li HTML5, CSS3, Javascript expert
+				li Solution hunter
+				li Tireless experimenter
+		.column
+			#profile-photo
+				img(src='../../images/profile/profileAndArt.jpg', alt='Manjit Karve')
+			.buttonRow
+				a#portfolioButton(href='../../portfolio')
+					include ../../public/images/portfolio-optimized.svg
+					span.slideout
+						include ../../public/images/resume-portfolio-button-bg-optimized.svg
+						span.text Portfolio
+				a#resumeButton(href='../../resume')
+					include ../../public/images/resume-optimized.svg
+					span.slideout
+						include ../../public/images/resume-portfolio-button-bg-optimized.svg
+						span.text R&eacute;sum&eacute;
