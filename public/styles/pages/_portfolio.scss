@@ -1,7 +1,12 @@
 //layout
 #portfolioContent{
   margin-bottom: 2rem;
-
+  #disclaimer{
+    font-style: italic;
+    font-size: 0.8rem;
+    font-weight: 100;
+    font-family: "Open Sans Light";
+  }
   #portfolioLayout{
     display: flex;
     margin-top: 1.5rem;
