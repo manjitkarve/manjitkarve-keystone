@@ -2042,7 +2042,8 @@ main#body[page='resume-page'] {
   min-height: 36rem; }
 
 #resumeContent {
-  margin-bottom: 2rem; }
+  margin-bottom: 5rem;
+  position: relative; }
   #resumeContent a, #resumeContent a:active, #resumeContent a:hover, #resumeContent a:visited, #resumeContent a:active, #resumeContent a:hover {
     text-decoration: none; }
   #resumeContent #resumeLayout {
@@ -2136,7 +2137,7 @@ main#body[page='resume-page'] {
           display: block; }
       #resumeContent .company.expanded .details {
         overflow: initial;
-        max-height: 20rem;
+        max-height: 30rem;
         transition: max-height 0.5s; }
   #resumeContent #competencies {
     margin-top: 1rem; }
@@ -2150,10 +2151,10 @@ main#body[page='resume-page'] {
       content: '';
       display: block;
       position: absolute;
-      right: 1.2rem;
+      right: 0.2rem;
       top: 0.3rem;
       z-index: 1;
-      width: 5.2rem;
+      width: 4.2rem;
       height: 0.7rem;
       background-color: #1f3038;
       border: 1px solid #0288D1; }
@@ -2162,41 +2163,41 @@ main#body[page='resume-page'] {
       height: 0.5rem;
       z-index: 2;
       top: 0.4rem;
-      width: 5rem;
-      right: 1.3rem; }
+      width: 4rem;
+      right: 0.3rem; }
     #resumeContent #skills li[data-skill-level="0"]:before {
       width: 0rem;
-      right: 6.3rem; }
-    #resumeContent #skills li[data-skill-level="0.5"]:before {
-      width: 0.5rem;
-      right: 5.8rem; }
-    #resumeContent #skills li[data-skill-level="1"]:before {
-      width: 1rem;
-      right: 5.3rem; }
-    #resumeContent #skills li[data-skill-level="1.5"]:before {
-      width: 1.5rem;
-      right: 4.8rem; }
-    #resumeContent #skills li[data-skill-level="2"]:before {
-      width: 2rem;
       right: 4.3rem; }
+    #resumeContent #skills li[data-skill-level="0.5"]:before {
+      width: 0.4rem;
+      right: 3.9rem; }
+    #resumeContent #skills li[data-skill-level="1"]:before {
+      width: 0.8rem;
+      right: 3.5rem; }
+    #resumeContent #skills li[data-skill-level="1.5"]:before {
+      width: 1.2rem;
+      right: 3.1rem; }
+    #resumeContent #skills li[data-skill-level="2"]:before {
+      width: 1.6rem;
+      right: 2.7rem; }
     #resumeContent #skills li[data-skill-level="2.5"]:before {
-      width: 2.5rem;
-      right: 3.8rem; }
-    #resumeContent #skills li[data-skill-level="3"]:before {
-      width: 3rem;
-      right: 3.3rem; }
-    #resumeContent #skills li[data-skill-level="3.5"]:before {
-      width: 3.5rem;
-      right: 2.8rem; }
-    #resumeContent #skills li[data-skill-level="4"]:before {
-      width: 4rem;
+      width: 2rem;
       right: 2.3rem; }
+    #resumeContent #skills li[data-skill-level="3"]:before {
+      width: 2.4rem;
+      right: 1.9rem; }
+    #resumeContent #skills li[data-skill-level="3.5"]:before {
+      width: 2.8rem;
+      right: 1.5rem; }
+    #resumeContent #skills li[data-skill-level="4"]:before {
+      width: 3.2rem;
+      right: 1.1rem; }
     #resumeContent #skills li[data-skill-level="4.5"]:before {
-      width: 4.5rem;
-      right: 1.8rem; }
+      width: 3.6rem;
+      right: 0.7rem; }
     #resumeContent #skills li[data-skill-level="5"]:before {
-      width: 5rem;
-      right: 1.3rem; }
+      width: 4rem;
+      right: 0.3rem; }
     #resumeContent #skills li[logo="html5.svg"] {
       background-image: url("../images/html5.svg"); }
     #resumeContent #skills li[logo="css3.svg"] {
@@ -2213,6 +2214,10 @@ main#body[page='resume-page'] {
       background-image: url("../images/svg.svg"); }
     #resumeContent #skills li[logo="nodejs.svg"] {
       background-image: url("../images/nodejs.svg"); }
+    #resumeContent #skills li[logo="sencha-touch.svg"] {
+      background-image: url("../images/sencha-touch.svg"); }
+    #resumeContent #skills li[logo="sharepoint.svg"] {
+      background-image: url("../images/sharepoint.svg"); }
   #resumeContent #education {
     display: flex;
     justify-content: flex-start;
@@ -2275,9 +2280,28 @@ main#body[page='resume-page'] {
         transition: max-height 0.5s; }
       #resumeContent #education article.degree.collapsed .college, #resumeContent #education article.degree.collapsed .gradDate, #resumeContent #education article.degree.collapsed .grade {
         margin: 0; }
+  #resumeContent #resumeDownload {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 0rem; }
+  #resumeContent #resumeButton {
+    display: block; }
+    #resumeContent #resumeButton svg {
+      width: 3rem;
+      height: 3rem; }
+      #resumeContent #resumeButton svg .bg-target {
+        fill: #03A9F4; }
+    #resumeContent #resumeButton:hover svg .bg-target {
+      fill: #ff0a73; }
 
 #portfolioContent {
   margin-bottom: 2rem; }
+  #portfolioContent #disclaimer {
+    font-style: italic;
+    font-size: 0.8rem;
+    font-weight: 100;
+    font-family: "Open Sans Light"; }
   #portfolioContent #portfolioLayout {
     display: flex;
     margin-top: 1.5rem; }
@@ -2329,7 +2353,8 @@ main#body[page='resume-page'] {
 
 #portfolioContent h3 {
   font-size: 1.5rem;
-  font-weight: 100; }
+  font-weight: 100;
+  margin-top: 0; }
 
 #portfolioContent .artifactSet.inPage {
   perspective: 500px;
@@ -2424,6 +2449,11 @@ main#body[page='resume-page'] {
       position: absolute;
       width: 40rem;
       transition: left 0.5s; }
+      #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact a, #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact a:active, #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact a:hover, #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact a:visited {
+        color: #ff0a73;
+        text-decoration: none; }
+      #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact a:active, #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact a:hover {
+        text-decoration: underline; }
       #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact .description.short {
         display: none; }
       #overlayContent[page="portfolio-page"] .artifactSet.floated .artifact .description.full {
@@ -2692,6 +2722,51 @@ main#body[page='resume-page'] {
     visibility: hidden; }
   #overlayContent[page="portfolio-page"][currentlyActive="1"] a.nav#prev {
     visibility: hidden; }
+
+#servicesContent {
+  font-size: 1.2rem;
+  position: relative;
+  margin-bottom: 5rem; }
+  #servicesContent h2 {
+    margin-bottom: 1rem !important; }
+  #servicesContent h3 {
+    font-size: 1.3rem;
+    margin: 0; }
+  #servicesContent li {
+    font-size: 1.1rem; }
+    #servicesContent li a, #servicesContent li a:link, #servicesContent li a:hover, #servicesContent li a:visited, #servicesContent li a:active {
+      color: #03A9F4; }
+    #servicesContent li a, #servicesContent li a:active, #servicesContent li a:hover, #servicesContent li a:visited {
+      color: #03A9F4;
+      text-decoration: none; }
+  #servicesContent ul > li {
+    margin: 0 0 1rem 0; }
+    #servicesContent ul > li ul li {
+      margin-bottom: 0px; }
+  #servicesContent #servicesLayout > ul {
+    margin-left: 0;
+    padding-left: 0; }
+    #servicesContent #servicesLayout > ul li {
+      padding: 0;
+      list-style-type: none; }
+      #servicesContent #servicesLayout > ul li ul {
+        padding-left: 1.5rem; }
+        #servicesContent #servicesLayout > ul li ul li {
+          list-style-type: circle; }
+  #servicesContent #contactLinkContainer {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 0rem; }
+  #servicesContent #resumeLink {
+    display: block; }
+    #servicesContent #resumeLink svg {
+      width: 3rem;
+      height: 3rem; }
+      #servicesContent #resumeLink svg .bg-target {
+        fill: #03A9F4; }
+    #servicesContent #resumeLink:hover svg .bg-target {
+      fill: #ff0a73; }
 
 footer {
   display: none; }

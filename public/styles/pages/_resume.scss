@@ -1,6 +1,7 @@
 main#body[page='resume-page']{min-height: 36rem;}
 #resumeContent{
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
+  position: relative;
   #{$a-tags}, #{$a-tags-hover}{
     text-decoration: none;
   }
@@ -101,7 +102,7 @@ main#body[page='resume-page']{min-height: 36rem;}
       }
       .details{
         //@include animDown();
-        @include slideDown(20rem);
+        @include slideDown(30rem);
       }
     }
     
@@ -110,8 +111,9 @@ main#body[page='resume-page']{min-height: 36rem;}
     margin-top: 1rem;
   }
   #skills{
-    $right-margin: 1.2rem;
-    $skills: ("html5", "css3", "sass", "javascript", "jquery", "xml", "svg", "nodejs");
+    $right-margin: 0.2rem;
+    $rating-width: 4;
+    $skills: ("html5", "css3", "sass", "javascript", "jquery", "xml", "svg", "nodejs", "sencha-touch", "sharepoint");
     li{
       position: relative;
       background-repeat: no-repeat;
@@ -126,7 +128,7 @@ main#body[page='resume-page']{min-height: 36rem;}
         right: $right-margin;
         top: 0.3rem;
         z-index: 1;
-        width: 5.2rem;
+        width: $rating-width + 0.2rem;
         height: 0.7rem;
         background-color: $primary-orth-dark;
         border: 1px solid $primary-dark; 
@@ -136,14 +138,14 @@ main#body[page='resume-page']{min-height: 36rem;}
         height: 0.5rem;
         z-index: 2;
         top: 0.4rem;
-        width: 5rem;
+        width: $rating-width + 0rem;
         right: $right-margin+0.1rem;
       }
       @for $i from 0 through 10 {
         $skillLevel: ''+(0.5*$i);
         &[#{data-skill-level=$skillLevel}]:before{
-          width: 0.5rem*$i;
-          right: $right-margin+0.1rem+0.5rem*(10-$i);
+          width: ($rating-width +0rem) / 10*$i;
+          right: $right-margin+0.1rem+($rating-width +0rem) / 10*(10-$i);
         }
       }
       @each $skill in $skills{
@@ -224,6 +226,28 @@ main#body[page='resume-page']{min-height: 36rem;}
         .college, .gradDate, .grade{
           margin: 0;
         }
+      }
+    }
+  }
+
+  #resumeDownload{
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 0rem;
+  }
+  #resumeButton{
+    display: block;
+    svg{
+      width: 3rem;
+      height: 3rem;
+      .bg-target{
+        fill: $primary-main;
+      }
+    }
+    &:hover{
+      svg .bg-target{
+        fill: $secondary-main;
       }
     }
   }

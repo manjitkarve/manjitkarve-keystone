@@ -79,6 +79,7 @@
   h3{
     font-size: 1.5rem;
     font-weight: 100;
+    margin-top: 0;
   }
   .artifactSet.inPage{
     perspective: 500px;
@@ -210,6 +211,13 @@ $slideDuration: 0.2s;
       position: absolute;
       width: 40rem;
       transition: left 0.5s;
+      #{$a-tags}{
+        color: $secondary-main;
+        text-decoration: none;
+      }
+      #{$a-tags-hover}{
+        text-decoration: underline;
+      }
       .description.short{display: none;}
       .description.full{
         display: block;
