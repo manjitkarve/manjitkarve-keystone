@@ -2218,6 +2218,10 @@ main#body[page='resume-page'] {
       background-image: url("../images/sencha-touch.svg"); }
     #resumeContent #skills li[logo="sharepoint.svg"] {
       background-image: url("../images/sharepoint.svg"); }
+    #resumeContent #skills li[logo="inkscape.svg"] {
+      background-image: url("../images/inkscape.svg"); }
+    #resumeContent #skills li[logo="gimp.svg"] {
+      background-image: url("../images/gimp.svg"); }
   #resumeContent #education {
     display: flex;
     justify-content: flex-start;
