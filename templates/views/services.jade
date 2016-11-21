@@ -1,0 +1,33 @@
+extends ../layouts/page
+
+block content
+  #servicesContent.mainContent
+    h2 I do all things UX
+    #servicesLayout
+      p Do you have a design project I can help you with?
+      ul
+        li
+          h3 UI/UX
+          ul
+            li End to end design for new projects
+            li Redesign of existing UIs
+            li Add features to an existing application (without changing look-and-feel)
+            li UI/UX reviews
+          p In all cases, deliverables can be wireframes, high-fidelity mockups or HTML/CSS/JS pages. I can even hook these up with RESTful APIs.
+        li
+          h3 Front-end development
+          ul
+            li UI development for a variety of platforms and technologies
+            li Grid and chart integration
+            li Solve complicated algorithmic problems
+            li Connect to RESTful APIs on your server
+        li: h3 Website design and development
+        li: h3 Mobile - responsive and app - design and development
+        li
+          h3 Hiring consultant
+          p Planning on creating an in-house design team and need help screening and interviewing candidates? 
+    #contactLinkContainer
+      a#resumeLink(href="/contact/")
+        include ../../public/images/contact-optimized.svg
+
+

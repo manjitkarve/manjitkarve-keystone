@@ -38,7 +38,7 @@
           "type": "group",
           "text": "Services",
           "icon": "public/images/services-optimized.svg",
-          "href": "javascript:void(0)",
+          "href": "/services/",
           "id": "services-page",
           "groupid": "services-menu",
           "classes": {},
